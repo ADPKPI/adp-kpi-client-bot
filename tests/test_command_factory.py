@@ -8,7 +8,6 @@ from command_handlers import ButtonHandler
 def test_get_command():
     factory = CommandFactory()
 
-    # Тест на создание существующей команды
     command = factory.get_command("start")
     assert isinstance(command, StartCommand)
 
@@ -21,7 +20,6 @@ def test_get_command():
     command = factory.get_command("cancel_order")
     assert isinstance(command, CancelOrderCommand)
 
-    # Тест на запрос неизвестной команды
     with pytest.raises(ValueError):
         factory.get_command("unknown_command")
 
